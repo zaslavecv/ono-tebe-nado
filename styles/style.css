@@ -2,32 +2,27 @@ body{
     font-size: 18px;
 }
 
-main{
-    height: 757px;    
-    background: url('../images/cover.jpg') no-repeat center bottom;
-    background-size: cover;
-}
-
 .overlay{
-    height: 100%;
     background: rgba(0,0,0,0.6);
-    overflow: hidden;
-    justify-content: space-between;
-    flex-direction: column;
-    display: flex;
+    inset: 0;
+    position: absolute;
 }
 
-h3{
+h2{
     font-size: 40px;
     font-weight: 700;
     line-height: 47px;
     text-transform: uppercase;
 }
 
+main > section{
+    position: relative;
+    overflow: hidden;
+}
+
 header{
     display: grid;
     grid-template-columns: 1fr 148px 1fr;
-    height: 105px;
     align-items: center;
     margin: 92px 0 96px 0;
 }
@@ -78,41 +73,48 @@ header address a{
     text-decoration-thickness: 1px;
 }
 
-#cover{
+.cover{
     height: 100%;
+    background: url('../images/cover.jpg') no-repeat center bottom;
+    background-size: cover;
 }
 
-#cover .cover__title{
-    color: #FFF;    
+.cover .cover__title{
+    color: #FFF;
     font-size: 100px; 
     text-transform: uppercase;       
     font-weight: bold;
-    line-height: 115px;
+    line-height: 100%;
     letter-spacing: 30px;
+    margin: 165px 50px 137px 50px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    position: relative;
+    z-index: 1;
 }
 
-#cover h1 > span{
-    display: block;
+.cover .cover__title .letter-spacing-extended{
+    letter-spacing: 60px;
 }
 
-#cover h1 > span > span{
-    letter-spacing: 60px; 
+.cover span.aligned-text{
+    line-height: 115%;
 }
 
-#cover span.aligned-text{
-    margin: 165px 0 13px 50px;
-}
-
-#cover span.aligned-text_center{
+.cover span.aligned-text_center{
     text-align: center;
 }
 
-#cover span.aligned-text_right{
+.cover span.aligned-text_right{
     text-align: right;
-    margin: 4px 21px 0 0;
 }
 
-#cover .cover__description{
+.cover .cover__title .no-letter-spacing{
+    letter-spacing: normal;
+}
+
+.cover .cover__description{
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -120,25 +122,29 @@ header address a{
     font-size: 22px;
     padding-bottom: 51px;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
-#cover .cover__description .cover__description-text{
+.cover .cover__description .cover__description-text{
     line-height: 28px;
     margin-left: 82px;
     word-spacing: 18px;
 }
 
-#cover .cover__description .bet-button{
-    text-decoration: none;
-    font-weight: 500;
+.cover .cover__description .bet-button{
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
     line-height: 26px;
     padding: 12px 32px 11px 31px;
-    border: 1px solid #fff;
+    border: 1px solid currentColor;
     margin-right: 50px;
-    letter-spacing: 0px;
+    text-transform: uppercase;
 }
 
-#lots{
+.lots{
     padding: 179px 24px 152px 24px;
 }
 
@@ -146,7 +152,7 @@ header address a{
     margin: 0 0 27px 40px;
 }
 
-#lots .lots__card-list{
+.lots .lots__card-list{
     list-style: none;
     display: flex;
     justify-content: space-between;
@@ -154,22 +160,31 @@ header address a{
     flex-wrap: wrap;
 }
 
-#lots .lots__card-list .lots__card-list-item{
+.lots .lots__card-list .lots__card-list-item{
     flex-basis: 334px;
 }
 
-#lots .lots__card-list .lots__card-list-item .card-link{
+.lots .lots__card-list .lots__card-list-item .card-link{
     display: block;
     text-decoration: none;
     height: 100%;
     color: #fff;
+    position: relative;
+    background-size: cover;
+    background-position: center bottom;
 }
 
-#lots .lots__card-list .lots__card-list-item .card-link article{
+.lots .lots__card-list .lots__card-list-item .card-link article{
+    height: 100%;
     padding: 48px 40px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-#lots .lots__card-list .lots__card-list-item .card-link article .card__title{
+.lots .lots__card-list .lots__card-list-item .card-link article .card__title{
     font-size: 22px;
     line-height: 26px;
     font-weight: 700;
@@ -180,28 +195,25 @@ header address a{
     margin-bottom: 3px;
 }
 
-#lots .lots__card-list .lots__card-list-item .card-link article .card__text{
+.lots .lots__card-list .lots__card-list-item .card-link article .card__text{
     font-size: 20px;
     line-height: 24.1px;
 }
 
-#lots .lots__card-list .lots__card-list-item .card_type_film{
-    background: url('../images/card-lot-01.jpg') no-repeat center bottom;
-    background-size: cover;
+.lots .lots__card-list .lots__card-list-item .card_type_film{
+    background-image: url('../images/card-lot-01.jpg');
 }
 
-#lots .lots__card-list .lots__card-list-item .card_type_book{
-    background: url('../images/card-lot-02.jpg') no-repeat center bottom;
-    background-size: cover;
+.lots .lots__card-list .lots__card-list-item .card_type_book{
+    background-image: url('../images/card-lot-02.jpg');
 }
 
-#lots .lots__card-list .lots__card-list-item .card_type_picture{
-    background: url('../images/card-lot-03.jpg') no-repeat center bottom;
-    background-size: cover;
+.lots .lots__card-list .lots__card-list-item .card_type_picture{
+    background-image: url('../images/card-lot-03.jpg');
 }
 
-#lots .lots__look-more-link{
-    display: inline-block;
+.lots .lots__look-more-link{
+    display:    block;
     margin: 30px 0 0 40px;
     font-size: 20px;
     line-height: 23px;
@@ -209,7 +221,7 @@ header address a{
     text-decoration-thickness: 1px;
 }
 
-#about{
+.about{
     display: grid;
     grid-template-columns: 334px 1fr;
     padding: 0 24px 0 24px;
@@ -217,33 +229,34 @@ header address a{
     margin-bottom: 178px;
 }
 
-#about .about__logo{
+.about .about__logo{
     width: 240px;
     height: 240px;
     background: #000;
-    border-radius: 130px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 28px 0 0 47px;
 }
 
-#about .about__logo .about__logo-image{
+.about .about__logo .about__logo-image{
     width: 148px;
     height: 122px;
 }
 
-#about .about__title{
+.about .about__title{
     margin: 128px 0 100px 0;
 }
 
-#about .about__text{
+.about .about__text{
     font-size: 20px;
     line-height: 24px;
+    margin-bottom: 26px;
 }
 
-#about .about__text:nth-child(2){
-    margin-bottom: 26px;
+.about .about__text:last-child{
+    margin-bottom: 0;
 }
 
 footer{
@@ -283,7 +296,7 @@ footer .footer__menu-list .footer__menu-list-item .footer__menu-link.footer__men
 
 footer .footer__social-list{
     list-style: none;
-    width: 240px;
+    gap: 48px;
     display: flex;
     justify-content: space-between;
 }
