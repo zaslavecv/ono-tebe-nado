@@ -155,7 +155,7 @@ header address a{
 .lots .lots__card-list{
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    gap: 25px;
     flex-grow: 1;
     flex-wrap: wrap;
 }
@@ -262,7 +262,7 @@ header address a{
 footer{
     display: flex;
     justify-content: space-between;
-    padding: 0 50px;
+    padding: 0 50px 94px 50px;
 }
 
 footer address{
